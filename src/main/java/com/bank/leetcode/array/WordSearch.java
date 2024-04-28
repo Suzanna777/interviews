@@ -6,7 +6,6 @@ package com.bank.leetcode.array;
 // For example,
 // Given board =
 
-// [
 //   ['A','B','C','E'],
 //   ['S','F','C','S'],
 //   ['A','D','E','E']
