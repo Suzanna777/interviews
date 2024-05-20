@@ -1,9 +1,8 @@
 package com.bank.leetcode.linked_Lists;
 
 import com.bank.code_library.LinkedlistNode;
-
 import java.util.HashSet;
-import java.util.LinkedList;
+
 
 /*  Remove Dups:
  Write code to remove duplicates from an unsorted linked list.
@@ -21,6 +20,8 @@ import java.util.LinkedList;
  3. When we discover a duplicate element,
  4. we remove the element and continue iterating.
  5. We can do this all in one pass since we are using a linked list*/
+
+
 public class Remove_Dups {
     void deleteDups(LinkedlistNode n){
         HashSet<Integer> set = new HashSet<Integer>();
@@ -60,5 +61,6 @@ public class Remove_Dups {
             }
         }
     }
+
 
 }
