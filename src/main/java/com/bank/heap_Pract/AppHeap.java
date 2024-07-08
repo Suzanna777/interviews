@@ -1,4 +1,4 @@
-package com.bank.heapPract;
+package com.bank.heap_Pract;
 
 public class AppHeap {
     public static void main(String[] args) {
