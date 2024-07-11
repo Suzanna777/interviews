@@ -10,6 +10,15 @@ public class MyHeap {
         this.items = new int[capacity];
         this.size=0;
     }
+
+    public MyHeap(int[]arr) {
+        this.items = new int[arr.length];
+        size=arr.length;
+        this.items=arr;
+        buildHeap();
+    }
+
+
     public int peek() {
         if (size==0) throw new NoSuchElementException();
         return items[0];
@@ -68,10 +77,13 @@ public class MyHeap {
         items[first]=items[second];
         items[second]=temp;
     }
-    public int parentIndex(int index) { return (index-1)/2;}
-    public boolean hasLeftChild(int index){ return  leftChildIndex(index)<size;}
-    public boolean hasRightChild(int index){ return  rightChildIndex(index)<size;}
-    public int leftChildIndex(int index){ return index*2 +1;}
+    public int parentIndex(int index)
+    { return (index-1)/2;}
+    public boolean hasLeftChild(int index)
+    { return  leftChildIndex(index)<size;}
+    public boolean hasRightChild(int index) { return  rightChildIndex(index)<size;}
+    public int leftChildIndex(int index)
+    { return index*2 +1;}
     public int rightChildIndex(int index){ return index*2 +2;}
     public int largerChildIndex(int index) {
         if (!hasLeftChild(index)) return index;
@@ -86,4 +98,20 @@ public class MyHeap {
         }
         System.out.println();
     }
+
+    public void buildHeap(){
+        int startIndex=(size/2)-1;
+        for (int i = startIndex; i >=0 ; i--) {
+            heapify(i);
+        }
+    }
+    public void heapify(int index){
+        // check if the index element is a valid parent
+        if(!isValidParent(index)) {
+            int largestChildIndex=largerChildIndex(index);
+            swap(index, largestChildIndex);
+            heapify(largestChildIndex);
+        }
+    }
+
 }

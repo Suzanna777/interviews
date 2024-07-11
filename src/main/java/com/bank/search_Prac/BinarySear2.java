@@ -6,7 +6,7 @@ public class BinarySear2 {
         int right = arr.length-1;
         while (right<=left){
             int mid = (left+right)/2;
-            if(arr[mid]==data) return mid
+            if(arr[mid]==data) return mid+1;
             if(data<arr[mid]) right =mid-1; // L  M D> R
             else left=mid+1;//
         }
